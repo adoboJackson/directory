@@ -1,0 +1,18 @@
+//colors
+	$blue: #00a2e7;
+	$green: #BADA55;
+	$dark-gray: #2d2d2d;
+	$depts: (leadership, $blue), (marketing, $green);
+
+//responsive breakpoints
+@mixin breakpoint($point) {
+  @if $point == papa-bear {
+    @media (max-width: 1600px) { @content; }
+  }
+  @else if $point == mama-bear {
+    @media (max-width: 1250px) { @content; }
+  }
+  @else if $point == baby-bear {
+    @media (max-width: 650px)  { @content; }
+  }
+}
