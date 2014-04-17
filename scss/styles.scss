@@ -10,24 +10,33 @@
 				} 
 			}
 			.back{
-				background: repeating-linear-gradient(
-				  45deg,
-				  $color,
-				  $color 10px,
-				  lighten($color,20%) 10px,
-				  lighten($color,20%) 20px
-				);
-				color: $dark-gray;
-				&:after{
-					content:"";
-					display: block;
-					position: absolute;
-					top: 0;
-					left:0;
-					bottom: 0;
-					right: 0;
-					z-index: -2;
-					background: linear-gradient(to top right, rgba($color,1), rgba($color,0));
+				@include breakpoint(papa-bear) {
+					background: repeating-linear-gradient(
+					45deg,
+					$color,
+					$color 10px,
+					lighten($color,20%) 10px,
+					lighten($color,20%) 20px
+					);
+					color: $dark-gray;
+					&:after{
+						content:"";
+						display: block;
+						position: absolute;
+						top: 0;
+						left:0;
+						bottom: 0;
+						right: 0;
+						z-index: -2;
+						background: linear-gradient(to top right, rgba($color,1), rgba($color,0));
+					}
+				}
+				@include breakpoint(baby-bear) {
+					background: desaturate($color,40%);
+					color: white;
+					&:after{
+						content: none;
+					}
 				}
 			}
 		}
@@ -92,7 +101,9 @@
 		transition: all .5s ease-out;
 		left: 0;
 		&.slide-out{
-			left:200px;
+			@include breakpoint(baby-bear) {
+				left:200px;
+			}
 		}
 	}
 	nav .menu-icon {
@@ -116,18 +127,17 @@
 		transition: all .5s ease-out;
 		z-index: 200;
 		display: block;
-		height: 100%;
+		@include breakpoint(papa-bear) {
+			position: relative;
+			width: 100%;
+			height: auto;
+		}
 		@include breakpoint(baby-bear) {
 			float: left;
 			position: absolute;
 			left: -200px;
 			width: 200px;
-		}
-		@include breakpoint(papa-bear) {
-			position: relative;
-			width: 100%;
-			height: auto;
-
+			height: 100%;
 		}
 		&.slide-out{
 			left:0;
@@ -317,6 +327,7 @@
 	}
 
 	ul.cards li.show:hover{
+
 		.front {
 			@include breakpoint(papa-bear) {
 				z-index: 0;

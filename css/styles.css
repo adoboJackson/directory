@@ -7,24 +7,37 @@
   color: #b4e9ff;
 }
 
-.cards li.leadership .back {
-  background: -webkit-repeating-linear-gradient(45deg, #00a2e7, #00a2e7 10px, #4ecaff 10px, #4ecaff 20px);
-  background: repeating-linear-gradient(45deg, #00a2e7, #00a2e7 10px, #4ecaff 10px, #4ecaff 20px);
-  color: #2d2d2d;
+@media (max-width: 1600px) {
+  .cards li.leadership .back {
+    background: -webkit-repeating-linear-gradient(45deg, #00a2e7, #00a2e7 10px, #4ecaff 10px, #4ecaff 20px);
+    background: repeating-linear-gradient(45deg, #00a2e7, #00a2e7 10px, #4ecaff 10px, #4ecaff 20px);
+    color: #2d2d2d;
+  }
+
+  .cards li.leadership .back:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+    background: -webkit-gradient(linear, bottom left, top right, from(#00a2e7), to(rgba(0, 162, 231, 0)));
+    background: -webkit-linear-gradient(bottom left, #00a2e7, rgba(0, 162, 231, 0));
+    background: linear-gradient(to top right, #00a2e7, rgba(0, 162, 231, 0));
+  }
 }
 
-.cards li.leadership .back:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -2;
-  background: -webkit-gradient(linear, bottom left, top right, from(#00a2e7), to(rgba(0, 162, 231, 0)));
-  background: -webkit-linear-gradient(bottom left, #00a2e7, rgba(0, 162, 231, 0));
-  background: linear-gradient(to top right, #00a2e7, rgba(0, 162, 231, 0));
+@media (max-width: 650px) {
+  .cards li.leadership .back {
+    background: #2e8fb9;
+    color: white;
+  }
+
+  .cards li.leadership .back:after {
+    content: none;
+  }
 }
 
 .cards li.marketing .front {
@@ -36,24 +49,37 @@
   color: #fefefd;
 }
 
-.cards li.marketing .back {
-  background: -webkit-repeating-linear-gradient(45deg, #bada55, #bada55 10px, #dceca9 10px, #dceca9 20px);
-  background: repeating-linear-gradient(45deg, #bada55, #bada55 10px, #dceca9 10px, #dceca9 20px);
-  color: #2d2d2d;
+@media (max-width: 1600px) {
+  .cards li.marketing .back {
+    background: -webkit-repeating-linear-gradient(45deg, #bada55, #bada55 10px, #dceca9 10px, #dceca9 20px);
+    background: repeating-linear-gradient(45deg, #bada55, #bada55 10px, #dceca9 10px, #dceca9 20px);
+    color: #2d2d2d;
+  }
+
+  .cards li.marketing .back:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+    background: -webkit-gradient(linear, bottom left, top right, from(#bada55), to(rgba(186, 218, 85, 0)));
+    background: -webkit-linear-gradient(bottom left, #bada55, rgba(186, 218, 85, 0));
+    background: linear-gradient(to top right, #bada55, rgba(186, 218, 85, 0));
+  }
 }
 
-.cards li.marketing .back:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -2;
-  background: -webkit-gradient(linear, bottom left, top right, from(#bada55), to(rgba(186, 218, 85, 0)));
-  background: -webkit-linear-gradient(bottom left, #bada55, rgba(186, 218, 85, 0));
-  background: linear-gradient(to top right, #bada55, rgba(186, 218, 85, 0));
+@media (max-width: 650px) {
+  .cards li.marketing .back {
+    background: #a5b17e;
+    color: white;
+  }
+
+  .cards li.marketing .back:after {
+    content: none;
+  }
 }
 
 * {
@@ -133,8 +159,10 @@ form input[type='text']:focus {
   left: 0;
 }
 
-#main-container.slide-out {
-  left: 200px;
+@media (max-width: 650px) {
+  #main-container.slide-out {
+    left: 200px;
+  }
 }
 
 nav .menu-icon {
@@ -163,7 +191,14 @@ nav {
   transition: all .5s ease-out;
   z-index: 200;
   display: block;
-  height: 100%;
+}
+
+@media (max-width: 1600px) {
+  nav {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (max-width: 650px) {
@@ -172,14 +207,7 @@ nav {
     position: absolute;
     left: -200px;
     width: 200px;
-  }
-}
-
-@media (max-width: 1600px) {
-  nav {
-    position: relative;
-    width: 100%;
-    height: auto;
+    height: 100%;
   }
 }
 
